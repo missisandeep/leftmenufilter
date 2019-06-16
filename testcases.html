@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+  
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+ 
+<!-- Modal -->
+<div class="modal leftmenu fade" id="filter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">filter</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="distance">
+                        <h2>Type of Destance</h2>
+                        <div class="checkbox">
+                            <input type="checkbox" class="" id="india" name="" value="1">
+                            <label for="india">india</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" class="" id="international" name="" value="1">
+                            <label for="international">international</label>
+                            
+                        </div>
+                    </div>
+                    <div class="distance">
+                        <h2>Category</h2>
+                        <div class="checkbox">
+                            <input type="checkbox" class="" id="HOneymoon" name="" value="1">
+                            <label for="HOneymoon">Honeymoon</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" class="" id="family" name="" value="1">
+                            <label for="family">family</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" class="" id="Friends" name="" value="1">
+                            <label for="Friends">Friends/Groups</label>
+                        </div>
+                    </div>
+                    <div class="distance">
+                        <h2>Duration in (Days)</h2>
+                        <div class="checkbox">
+                            <input type="checkbox" class="" id="oneto3" value="1" name="">
+                            <label for="oneto3">1 to 3</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" class="" value="1" id="fourto6" name="">
+                            <label for="fourto6"> 4 to 6</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" value="1s" class="" id="sevento9" name="">
+                            <label for="sevento9">7 to 9 </label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" class="" value="1" id="tento12" name="">
+                            <label for="tento12">10 to 12 </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="clickOnApply()">Apply</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</head>
+<body onload="myFunction()">
+
+
+   <div class="container-fluid" style="background-color:#e8e8e8">
+
+        <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">Brand</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                  </form>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+
+<div class="container container-pad" id="property-listings">
+    
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Home Listings</h1>
+        </div>
+    </div>
+    
+    <div class="row" style="background-color: #fff;">
+        <div class="col-sm-3" style="padding: 30px">
+            <div class="leftmenu">
+                <div class="list-group">
+                    <a href="JavaScript:void(0);" class="list-group-item" data-toggle="modal" data-target="#filter">filter</a>
+                </div>
+                <div class="distance">
+                    <h2>Type of Destance</h2>
+                    <div class="checkbox">
+                        <input type="checkbox" class="" id="india_left_filter" name="">
+                        <label for="india">india</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="" id="international_left_filter" name="" value="1">
+                        <label for="international">international</label>
+                        
+                    </div>
+                </div>
+
+        <div class="distance">
+             <h2>Category</h2>
+                <div class="checkbox">
+                    <input type="checkbox" class="" id="HOneymoon_left_filter" name="" value="1">
+                    <label for="HOneymoon">Honeymoon</label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" class="" id="family_left_filter" value="1" name="">
+                    <label for="family">family</label>
+                </div>
+                 <div class="checkbox">
+                    <input type="checkbox" class="" id="Friends_left_filter" name="" value="1">
+                    <label for="Friends/Groups">Friends/Groups</label>
+                </div>
+        </div>
+
+
+        <div class="distance">
+             <h2>Duration in (Days)</h2>
+                <div class="checkbox">
+                    <input type="checkbox" class="" id="oneto3_left_filter" value="1" name="">
+                    <label for="oneto31">1 to 3</label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" class="" value="1" id="fourto6_left_filter" name="">
+                    <label for="fourto6"> 4 to 6</label>
+                </div>
+                 <div class="checkbox">
+                    <input type="checkbox" value="1" class="" id="sevento9_left_filter" name="">
+                    <label for="sevento9">7 to 9 </label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" value="1" class="" id="tento12_left_filter" name="">
+                    <label for="tento12">10 to 12 </label>
+                </div>
+        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8"> 
+                    <div class="row">
+                        <div class="col-md-3 col-sm-offset-9">
+                            <a href="JavaScript:void(0);" class="list-group-item" data-toggle="modal" data-target="#filter">Expore All Fillter</a>
+                        </div>
+                    </div>
+                    <!-- Begin Listing: 609 W GRAVERS LN-->
+                    <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                        <div class="media">
+                            <a class="pull-left" href="#" target="_parent">
+                            <img alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/Yu59d899Ocpyr_RnF0-8qNJX1oYibjwp9TiLy-bZvU9vRJ2iC1zSQgFwW-fTCs6tVkKrj99s7FFm5Ygwl88xIA.jpg"></a>
+
+                            <div class="clearfix visible-sm"></div>
+
+                            <div class="media-body fnt-smaller">
+                                <a href="#" target="_parent"></a>
+
+                                <h4 class="media-heading">
+                                  <a href="#" target="_parent">$1,975,000 <small class="pull-right">609 W Gravers Ln</small></a></h4>
+
+
+                                <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                                    <li>4,820 SqFt</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                    <li>5 Beds</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                    <li>5 Baths</li>
+                                </ul>
+
+                                <p class="hidden-xs">Situated between fairmount
+                                park and the prestigious philadelphia cricket
+                                club, this beautiful 2+ acre property is truly
+                                ...</p><span class="fnt-smaller fnt-lighter fnt-arial">Courtesy of HS Fox & Roach-Chestnut Hill
+                                Evergreen</span>
+                            </div>
+                        </div>
+                    </div><!-- End Listing-->
+
+                    <!-- Begin Listing: 218 LYNNEBROOK LN-->
+                    <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                        <div class="media">
+                            <a class="pull-left" href="#" target="_parent">
+                            <img alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/zMjCkcFeFDXDAP8xDhbD9ZmrVL7oGkBvSnh2bDBZ6UB5UHXa3_g8c6XYhRY_OxgGaMBMehiTWXDSLzBMaIzRhA.jpg"></a>
+
+                            <div class="clearfix visible-sm"></div>
+
+                            <div class="media-body fnt-smaller">
+                                <a href="#" target="_parent"></a>
+
+                                <h4 class="media-heading">
+                                  <a href="#" target="_parent">$1,975,000 <small class="pull-right">218 Lynnebrook Ln</small></a></h4>
+
+
+                                <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                                    <li>6,959 SqFt</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                    <li>6 Beds</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                    <li>5 Baths</li>
+                                </ul>
+
+                                <p class="hidden-xs">Impressively positioned
+                                overlooking 3.5 captivating acres, designated
+                                as "significant" by the chestnut hill
+                                historical s...</p><span class="fnt-smaller fnt-lighter fnt-arial">Courtesy of HS Fox & Roach-Blue Bell</span>
+                            </div>
+                        </div>
+                    </div><!-- End Listing-->
+
+                    <!-- Begin Listing: 209 CHESTNUT HILL AVE-->
+                    <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                        <div class="media">
+                            <a class="pull-left" href="#" target="_parent">
+                            <img alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/iwn7qH9r9OPnqTaTTxxb8PBzQHk2EiHU2PBBntt041AZsVsGY-SeUexTMLgRcYSJukrKOwHaYnTVXAsk6RdSmA.jpg"></a>
+
+                            <div class="clearfix visible-sm"></div>
+
+                            <div class="media-body fnt-smaller">
+                                <a href="#" target="_parent"></a>
+
+                                <h4 class="media-heading">
+                                  <a href="#" target="_parent">$1,599,999 <small class="pull-right">209 Chestnut Hill ve</small></a></h4>
+
+
+                                <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                                    <li>16,581 SqFt</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                    <li>8 Beds</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                    <li>4 Baths</li>
+                                </ul>
+
+                                <p class="hidden-xs">Built in 1909 by
+                                pittsburgh steel magnate henry a. laughlin,
+                                greylock is a classic chestnut hill stone
+                                mansion once cons...</p><span class="fnt-smaller fnt-lighter fnt-arial">Courtesy of ng and Foster-Devon</span>
+                            </div>
+                        </div>
+                    </div><!-- End Listing-->
+
+                    <!-- Begin Listing: 704 SAINT GEORGES ST-->
+                    <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                        <div class="media">
+                            <a class="pull-left" href="#" target="_parent">
+                            <img alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/7IZk2HTN0AcHnIb7VCvisTUc3kTbn0UyHQlVAlwkNLM3_8UNN8pcgy9u6KVNoRGGH_kdUlpYehdbqzctRNUebg.jpg"></a>
+
+                            <div class="clearfix visible-sm"></div>
+
+                            <div class="media-body fnt-smaller">
+                                <a href="#" target="_parent"></a>
+
+                                <h4 class="media-heading">
+                                  <a href="#" target="_parent">$1,595,000 <small class="pull-right">704 Saint Georges St</small></a></h4>
+
+
+                                <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                                    <li>0 SqFt</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                    <li>4 Beds</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                    <li>5 Baths</li>
+                                </ul>
+
+                                <p class="hidden-xs">Blake development is proud
+                                to offer the second of two distinctly unique
+                                homes located on one of the most desirable
+                                stree...</p><span class="fnt-smaller fnt-lighter fnt-arial">Courtesy of HS Fox & Roach-Chestnut Hill
+                                Evergreen</span>
+                            </div>
+                        </div>
+                    </div><!-- End Listing--> 
+
+                    <!-- Begin Listing: 1220-32 N HOWARD ST-->
+                    <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                        <div class="media">
+                            <a class="pull-left" href="#" target="_parent">
+                            <img alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/vGoNjc2jHGb87GlnnDQlf6LxeOUgIOn0bL6Wvn1nEnig2Ntq6W7xN5cOQBZZeNxl9O42DOkHUw0LNnj1ZB2KHA.jpg"></a>
+
+                            <div class="clearfix visible-sm"></div>
+
+                            <div class="media-body fnt-smaller">
+                                <a href="#" target="_parent"></a>
+
+                                <h4 class="media-heading">
+                                  <a href="#" target="_parent">$1,500,000 <small class="pull-right">1220-32 N Howard St</small></a></h4>
+
+
+                                <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                                    <li>4,900 SqFt</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                    <li>1 Beds</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                    <li>1 Baths</li>
+                                </ul>
+
+                                <p class="hidden-xs">A once in a lifetime
+                                opportunity to own a unique live / work space
+                                in one of philadelphia's most popular
+                                neighborhoods. ...</p><span class="fnt-smaller fnt-lighter fnt-arial">Courtesy of ll Banker Preferred-Philadelphia</span>
+                            </div>
+                        </div>
+                    </div><!-- End Listing-->
+
+                    <!-- Begin Listing: 9006 CREFELD ST-->
+                    <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                        <div class="media">
+                            <a class="pull-left" href="#" target="_parent">
+                            <img alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/uLp58OH37CTPHxXcgJXYw8zT2u3xg_2XIbFndB6J0WTSAStGBaEV6YsdAseSZTKAdthm0OzG-Ca_EIkoXIEBxw.jpg"></a>
+
+                            <div class="clearfix visible-sm"></div>
+
+                            <div class="media-body fnt-smaller">
+                                <a href="#" target="_parent"></a>
+
+                                <h4 class="media-heading">
+                                  <a href="#" target="_parent">$1,295,000 <small class="pull-right">9006 Crefeld St</small></a></h4>
+
+
+                                <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                                    <li>7,672 SqFt</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                    <li>7 Beds</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                    <li>5 Baths</li>
+                                </ul>
+
+                                <p class="hidden-xs">Located in chestnut hill,
+                                recently named by the american planning
+                                association as one of america's top 10 great
+                                neighborh...</p><span class="fnt-smaller fnt-lighter fnt-arial">Courtesy of RE/MAX Services</span>
+                            </div>
+                        </div>
+                    </div><!-- End Listing-->
+
+                    <!-- Begin Listing: 701 W ALLENS LN-->
+                    <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                        <div class="media">
+                            <a class="pull-left" href="#" target="_parent">
+                            <img alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/K12MLs4i-e2rsQ-rA6DoCwlysXSrEXZyHtCFkrOLsvK1y2mvbUrlmw5pMXX1laXlnY9_0VU82YeS3EucwIchtg.jpg"></a>
+
+                            <div class="clearfix visible-sm"></div>
+
+                            <div class="media-body fnt-smaller">
+                                <a href="#" target="_parent"></a>
+
+                                <h4 class="media-heading">
+                                  <a href="#" target="_parent">$1,175,000 <small class="pull-right">701 W Allens Ln</small></a></h4>
+
+
+                                <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                                    <li>9,824 SqFt</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                    <li>8 Beds</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                    <li>5 Baths</li>
+                                </ul>
+
+                                <p class="hidden-xs">A once in a lifetime
+                                opportunity! live in this grand home with its
+                                stunning entry and staircase, bedroom suites,
+                                firepla...</p><span class="fnt-smaller fnt-lighter fnt-arial">Courtesy of HS Fox & Roach-Chestnut Hill
+                                Evergreen</span>
+                            </div>
+                        </div>
+                    </div><!-- End Listing-->
+                </div><!-- End Col -->
+            </div><!-- End row -->
+        </div><!-- End container -->
+    </div>
+</body>
+
+<script type="text/javascript">
+function clickOnApply(){
+    // alert();
+    var ind = document.querySelector('#india:checked');
+    var int = document.querySelector('#international:checked');
+    var hnmn = document.querySelector('#HOneymoon:checked');
+    var fmly = document.querySelector('#family:checked');
+    var frnd = document.querySelector('#Friends:checked');
+    var one = document.querySelector('#oneto3:checked');
+    var four = document.querySelector('#fourto6:checked');
+    var seven = document.querySelector('#sevento9:checked');
+    var ten = document.querySelector('#tento12:checked');
+    // alert(ind);
+    if(ind != null){
+        ind = ind.value;
+    }else{
+        ind = 0;
+    }
+    if(int != null){
+        int = int.value;
+    }else{
+        int = 0;
+    }
+    if(hnmn != null){
+        hnmn = hnmn.value;
+    }else{
+        hnmn = 0;
+    }
+    if(fmly != null){
+        fmly = fmly.value;
+    }else{
+        fmly = 0;
+    }
+    if(frnd != null){
+        frnd = frnd.value;
+    }else{
+        frnd = 0;
+    }
+    if(one != null){
+        one = one.value;
+    }else{
+        one = 0;
+    }
+    if(four != null){
+        four = four.value;
+    }else{
+        four = 0;
+    }
+    if(seven != null){
+        seven = seven.value;
+    }else{
+        seven = 0;
+    }
+    if(ten != null){
+        ten = ten.value;
+    }else{
+        ten = 0;
+    }
+    //alert(window.location.href);
+    let url = window.location.href+'?'+'india='+ind+'&international='+int+'&HOneymoon='+hnmn+'&family='+fmly+'&Friends='+frnd+'&oneto3='+one+'&fourto6='+four+'&sevento9='+seven+'&tento12='+ten;
+    window.open(url);
+
+}
+
+    function myFunction(){
+
+        var currentURL = window.location.href;
+        var url      = new URL(currentURL);
+        var ind      = url.searchParams.get("india");
+        var int      = url.searchParams.get("international");
+        var hnmn     = url.searchParams.get("HOneymoon");
+        var fmly     = url.searchParams.get("family");
+        var frnd     = url.searchParams.get("Friends");
+        var one      = url.searchParams.get("oneto3");
+        var four     = url.searchParams.get("fourto6");
+        var seven     = url.searchParams.get("sevento9");
+        var ten      = url.searchParams.get("tento12");
+
+        if(ind == 1){
+            document.getElementById("india_left_filter").checked = true;
+        }
+
+        if(int == 1){
+            document.getElementById("international_left_filter" ).checked = true;
+        }
+
+        if(hnmn == 1){
+            document.getElementById("HOneymoon_left_filter").checked = true;
+        }
+
+        if(fmly == 1){
+            document.getElementById("family_left_filter").checked = true;
+        }
+
+        if(frnd == 1){
+            document.getElementById("Friends_left_filter").checked = true;
+        }
+
+        if(one == 1){
+            document.getElementById("oneto3_left_filter").checked = true;
+        }
+
+        if(four == 1){
+            document.getElementById("fourto6_left_filter").checked = true;
+        }
+
+        if(ten == 1){
+            document.getElementById("tento12_left_filter").checked = true;
+        }
+
+        if(seven == 1){
+            document.getElementById("sevento9_left_filter").checked = true;
+        }
+    }
+</script>
+</html>
