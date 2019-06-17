@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+  
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- fa fa icons -->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+
+ 
+<!-- Modal -->
+<div class="modal leftmenu fade" id="filter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">filter</h4>
+            </div>
+            <div class="modal-body">
+               <div class="row">
+                    <div class="col-md-12">
+                    <div class="distance">
+                        <h2>Type of Destance</h2>
+                        <div class="checkbox">
+                            <input type="checkbox" class="" id="india" name="" value="1">
+                            <label for="india">india</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" class="" id="international" name="" value="1">
+                            <label for="international">international</label>
+                            
+                        </div>
+                    </div>
+                    <div class="distance">
+                        <h2>Category</h2>
+                        <div class="checkbox">
+                            <input type="checkbox" class="" id="HOneymoon" name="" value="1">
+                            <label for="HOneymoon">Honeymoon</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" class="" id="family" name="" value="1">
+                            <label for="family">family</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" class="" id="Friends" name="" value="1">
+                            <label for="Friends">Friends/Groups</label>
+                        </div>
+                    </div>
+                    <div class="distance">
+                        <h2>Duration in (Days)</h2>
+                        <div class="checkbox">
+                            <input type="checkbox" class="" id="oneto3" value="1" name="">
+                            <label for="oneto3">1 to 3</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" class="" value="1" id="fourto6" name="">
+                            <label for="fourto6"> 4 to 6</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" value="1s" class="" id="sevento9" name="">
+                            <label for="sevento9">7 to 9 </label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" class="" value="1" id="tento12" name="">
+                            <label for="tento12">10 to 12 </label>
+                        </div>
+                    </div>
+                </div>
+               </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="clickOnApply()">Apply</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</head>
+<body onload="myFunction()">
+
+<section>
+ <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#"><i class=""><img src=""></i>Travel Triangle</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  
+                  <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    
+                  </form>
+                 
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+<div class="container container-pad" id="property-listings">
+    
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">list of family packages</a></li>
+            </ol>
+        </div>
+    </div>
+    
+    <div class="row" style="background-color: #fff;">
+        <div class="col-sm-3" style="padding: 30px">
+            <div class="leftmenu">
+               
+                <div class="distance">
+                    <h2>Type of Destance</h2>
+                    <div class="checkbox">
+                        <input type="checkbox" class="" id="india_left_filter" name="">
+                        <label for="india">india</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="" id="international_left_filter" name="" value="1">
+                        <label for="international">international</label>
+                        
+                    </div>
+                </div>
+
+        <div class="distance">
+             <h2>Category</h2>
+                <div class="checkbox">
+                    <input type="checkbox" class="" id="HOneymoon_left_filter" name="" value="1">
+                    <label for="HOneymoon">Honeymoon</label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" class="" id="family_left_filter" value="1" name="">
+                    <label for="family">family</label>
+                </div>
+                 <div class="checkbox">
+                    <input type="checkbox" class="" id="Friends_left_filter" name="" value="1">
+                    <label for="Friends/Groups">Friends/Groups</label>
+                </div>
+        </div>
+        <div class="multiple_filter">
+            <h2>Filters</h4>
+            <p>Looking to select multiple filters?<a href="JavaScript:void(0);" class="" data-toggle="modal" data-target="#filter">Click Here </a></p>
+        </div>
+
+
+        <div class="distance">
+             <h2>Duration in (Days)</h2>
+                <div class="checkbox">
+                    <input type="checkbox" class="" id="oneto3_left_filter" value="1" name="">
+                    <label for="oneto31">1 to 3</label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" class="" value="1" id="fourto6_left_filter" name="">
+                    <label for="fourto6"> 4 to 6</label>
+                </div>
+                 <div class="checkbox">
+                    <input type="checkbox" value="1" class="" id="sevento9_left_filter" name="">
+                    <label for="sevento9">7 to 9 </label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" value="1" class="" id="tento12_left_filter" name="">
+                    <label for="tento12">10 to 12 </label>
+                </div>
+                </div>
+                    </div>
+                </div>
+                <div class="col-sm-9"> 
+                    <div class="row">
+                        <div class="col-md-3 col-sm-offset-9">
+                            <a href="JavaScript:void(0);" class="filter_all" data-toggle="modal" data-target="#filter"><i class="fa fa-filter"></i>Expore All Fillter</a>
+                        </div>
+                    </div>
+                    <!-- Begin Listing: 609 W GRAVERS LN-->
+                    <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                        <div class="media">
+                            <a class="pull-left" href="#" target="_parent">
+                            <img alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/Yu59d899Ocpyr_RnF0-8qNJX1oYibjwp9TiLy-bZvU9vRJ2iC1zSQgFwW-fTCs6tVkKrj99s7FFm5Ygwl88xIA.jpg"></a>
+
+                            <div class="clearfix visible-sm"></div>
+
+                            <div class="media-body fnt-smaller">
+                                <a href="#" target="_parent"></a>
+
+                                <h2 class="property-name">Game of Himachal family packages from chandigarh</h2>
+
+                                <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                                    <li>10 Days & 4 Nights</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                    <li>Customizable</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                </ul>
+
+                                <p>Start from <span class="off_per">60% Off</span> <i class="fa fa-info-circle" title="Notes"></i></p>
+
+
+                                <h4 class="media-heading">
+                                  <a href="#" target="_parent">&#8377 26,000 <small class="pull-right">609 W Gravers Ln</small></a></h4>
+
+                                <p class="hidden-xs " >Lorem ipsum dolor sit amet, ...</p>
+
+                                <div class="">
+                                    <label class="container_radio">3 Star
+                                      <input type="radio" checked="checked" name="radio">
+                                      <span class="checkmark"></span>
+                                    </label>
+                                    <label class="container_radio">4 Star
+                                      <input type="radio" name="radio">
+                                      <span class="checkmark"></span>
+                                    </label>
+                                    <label class="container_radio">5 Star
+                                      <input type="radio" name="radio">
+                                      <span class="checkmark"></span>
+                                    </label>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End Listing-->
+
+                    <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                        <div class="media">
+                            <a class="pull-left" href="#" target="_parent">
+                            <img alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/zMjCkcFeFDXDAP8xDhbD9ZmrVL7oGkBvSnh2bDBZ6UB5UHXa3_g8c6XYhRY_OxgGaMBMehiTWXDSLzBMaIzRhA.jpg"></a>
+
+                            <div class="clearfix visible-sm"></div>
+
+                            <div class="media-body fnt-smaller">
+                                <a href="#" target="_parent"></a>
+
+                                <h2 class="property-name">Game of Himachal family packages from chandigarh</h2>
+
+                                <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                                    <li>10 Days & 4 Nights</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                    <li>Customizable</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                </ul>
+
+                                <p>Start from <span class="off_per">60% Off</span> <i class="fa fa-info-circle" title="Notes"></i></p>
+
+
+                                <h4 class="media-heading">
+                                  <a href="#" target="_parent">&#8377 26,000 <small class="pull-right">609 W Gravers Ln</small></a></h4>
+
+                                <p class="hidden-xs " >Lorem ipsum dolor sit amet, ...</p>
+
+                                <div class="">
+                                    <label class="container_radio">3 Star
+                                      <input type="radio" checked="checked" name="radio">
+                                      <span class="checkmark"></span>
+                                    </label>
+                                    <label class="container_radio">4 Star
+                                      <input type="radio" name="radio">
+                                      <span class="checkmark"></span>
+                                    </label>
+                                    <label class="container_radio">5 Star
+                                      <input type="radio" name="radio">
+                                      <span class="checkmark"></span>
+                                    </label>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End Listing-->
+
+                    <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                        <div class="media">
+                            <a class="pull-left" href="#" target="_parent">
+                            <img alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/iwn7qH9r9OPnqTaTTxxb8PBzQHk2EiHU2PBBntt041AZsVsGY-SeUexTMLgRcYSJukrKOwHaYnTVXAsk6RdSmA.jpg"></a>
+
+                            <div class="clearfix visible-sm"></div>
+
+                            <div class="media-body fnt-smaller">
+                                <a href="#" target="_parent"></a>
+
+                                <h2 class="property-name">Game of Himachal family packages from chandigarh</h2>
+
+                                <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                                    <li>10 Days & 4 Nights</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                    <li>Customizable</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                </ul>
+
+                                <p>Start from <span class="off_per">60% Off</span> <i class="fa fa-info-circle" title="Notes"></i></p>
+
+
+                                <h4 class="media-heading">
+                                  <a href="#" target="_parent">&#8377 26,000 <small class="pull-right">609 W Gravers Ln</small></a></h4>
+
+                                <p class="hidden-xs " >Lorem ipsum dolor sit amet, ...</p>
+
+                                <div class="">
+                                    <label class="container_radio">3 Star
+                                      <input type="radio" checked="checked" name="radio">
+                                      <span class="checkmark"></span>
+                                    </label>
+                                    <label class="container_radio">4 Star
+                                      <input type="radio" name="radio">
+                                      <span class="checkmark"></span>
+                                    </label>
+                                    <label class="container_radio">5 Star
+                                      <input type="radio" name="radio">
+                                      <span class="checkmark"></span>
+                                    </label>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End Listing-->
+
+                </div><!-- End Col -->
+            </div><!-- End row -->
+        </div><!-- End container -->
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+<script type="text/javascript">
+
+    /*=======================================================
+    =            apply All filter function start            =
+    =======================================================*/
+    
+        function clickOnApply(){
+
+        // check value is checked
+        
+        var ind = document.querySelector('#india:checked');
+        var int = document.querySelector('#international:checked');
+        var hnmn = document.querySelector('#HOneymoon:checked');
+        var fmly = document.querySelector('#family:checked');
+        var frnd = document.querySelector('#Friends:checked');
+        var one = document.querySelector('#oneto3:checked');
+        var four = document.querySelector('#fourto6:checked');
+        var seven = document.querySelector('#sevento9:checked');
+        var ten = document.querySelector('#tento12:checked');
+        
+        // get the value
+       
+        if(ind != null){
+            ind = ind.value;
+        }else{
+            ind = 0;
+        }
+        if(int != null){
+            int = int.value;
+        }else{
+            int = 0;
+        }
+        if(hnmn != null){
+            hnmn = hnmn.value;
+        }else{
+            hnmn = 0;
+        }
+        if(fmly != null){
+            fmly = fmly.value;
+        }else{
+            fmly = 0;
+        }
+        if(frnd != null){
+            frnd = frnd.value;
+        }else{
+            frnd = 0;
+        }
+        if(one != null){
+            one = one.value;
+        }else{
+            one = 0;
+        }
+        if(four != null){
+            four = four.value;
+        }else{
+            four = 0;
+        }
+        if(seven != null){
+            seven = seven.value;
+        }else{
+            seven = 0;
+        }
+        if(ten != null){
+            ten = ten.value;
+        }else{
+            ten = 0;
+        }
+        // current url with query strings
+        
+        //alert(window.location.href);
+        let url = window.location.href+'?'+'india='+ind+'&international='+int+'&HOneymoon='+hnmn+'&family='+fmly+'&Friends='+frnd+'&oneto3='+one+'&fourto6='+four+'&sevento9='+seven+'&tento12='+ten;
+        window.open(url);
+
+    }
+    
+    /*=====  End of apply All filter function start  ======*/
+    
+
+
+    function myFunction(){
+
+        // find the checked value and show the selected 
+       
+        var currentURL = window.location.href;
+        var url      = new URL(currentURL);
+        var ind      = url.searchParams.get("india");
+        var int      = url.searchParams.get("international");
+        var hnmn     = url.searchParams.get("HOneymoon");
+        var fmly     = url.searchParams.get("family");
+        var frnd     = url.searchParams.get("Friends");
+        var one      = url.searchParams.get("oneto3");
+        var four     = url.searchParams.get("fourto6");
+        var seven     = url.searchParams.get("sevento9");
+        var ten      = url.searchParams.get("tento12");
+
+        if(ind == 1){
+            document.getElementById("india_left_filter").checked = true;
+        }
+
+        if(int == 1){
+            document.getElementById("international_left_filter" ).checked = true;
+        }
+
+        if(hnmn == 1){
+            document.getElementById("HOneymoon_left_filter").checked = true;
+        }
+
+        if(fmly == 1){
+            document.getElementById("family_left_filter").checked = true;
+        }
+
+        if(frnd == 1){
+            document.getElementById("Friends_left_filter").checked = true;
+        }
+
+        if(one == 1){
+            document.getElementById("oneto3_left_filter").checked = true;
+        }
+
+        if(four == 1){
+            document.getElementById("fourto6_left_filter").checked = true;
+        }
+
+        if(ten == 1){
+            document.getElementById("tento12_left_filter").checked = true;
+        }
+
+        if(seven == 1){
+            document.getElementById("sevento9_left_filter").checked = true;
+        }
+    }
+</script>
+</html>
